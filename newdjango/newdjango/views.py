@@ -14,3 +14,5 @@ def indrakant(request):
 def add(request, a=0, b=0):
     result = "A={0} + {1} = {2}".format(a, b, a + b)
     return HttpResponse(result)
+def html(request):
+    return render(request,"hello.html")

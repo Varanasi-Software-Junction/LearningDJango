@@ -24,4 +24,5 @@ urlpatterns = [
     path('add/<int:a>/<int:b>', views.add),
     path('add/<int:a>/', views.add),
     path('add/', views.add),
+path('html/', views.html),
 ]
