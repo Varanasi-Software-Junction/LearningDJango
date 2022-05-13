@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
@@ -24,5 +25,7 @@ urlpatterns = [
     path('add/<int:a>/<int:b>', views.add),
     path('add/<int:a>/', views.add),
     path('add/', views.add),
-path('html/', views.html),
+    path('html/', views.html),
+    path('get/', views.get),
+    path('post/', views.post),
 ]
