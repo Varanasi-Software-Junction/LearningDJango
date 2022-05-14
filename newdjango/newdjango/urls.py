@@ -18,6 +18,7 @@ from django.urls import path
 
 from . import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
@@ -26,6 +27,27 @@ urlpatterns = [
     path('add/<int:a>/', views.add),
     path('add/', views.add),
     path('html/', views.html),
-    path('get/', views.get),
+# <<<<<<< Updated upstream
+#     path('get/', views.get),
+#     path('post/', views.post),
+# =======
+    path('abhishek', views.abhishek),
+    # path('get', views.get),
+    path('fact/<int:f>', views.fact),
+    path('get/', views.get ),
     path('post/', views.post),
+    path('addsub/', views.addsub),
+    path('addsubpost/', views.addsubpost)
+# >>>>>>> Stashed changes
 ]
+
+
+
+
+
+
+
+
+
+
+
