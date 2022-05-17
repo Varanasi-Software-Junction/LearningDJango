@@ -37,7 +37,13 @@ urlpatterns = [
     path('get/', views.get ),
     path('post/', views.post),
     path('addsub/', views.addsub),
-    path('addsubpost/', views.addsubpost)
+    path('addsubpost/', views.addsubpost),
+    path('addsubradio/', views.addsubradio),
+    path('select/', views.select),
+    path('check', views.check),
+    path('loop', views.loop),
+    path('loop1', views.loop1),
+    path('printtable', views.printtable),
 # >>>>>>> Stashed changes
 ]
 
