@@ -14,28 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', views.index),
     path('indrakant/', views.indrakant),
     path('add/<int:a>/<int:b>', views.add),
     path('add/<int:a>/', views.add),
     path('add/', views.add),
     path('html/', views.html),
-# <<<<<<< Updated upstream
-#     path('get/', views.get),
-#     path('post/', views.post),
-# =======
-    path('abhishek', views.abhishek),
-    # path('get', views.get),
-    path('fact/<int:f>', views.fact),
-    path('get/', views.get ),
+    path('get/', views.get),
     path('post/', views.post),
+# <<<<<<< HEAD
     path('addsub/', views.addsub),
     path('addsubpost/', views.addsubpost),
     path('addsubradio/', views.addsubradio),
@@ -44,16 +38,12 @@ urlpatterns = [
     path('loop', views.loop),
     path('loop1', views.loop1),
     path('printtable', views.printtable),
+    path('keyvalue/', views.keyvalue),
+    path('keyvaluedelete/', views.keyvaluedelete),
+    path('addshowresult/', views.addshowresult),
+    path('showresult/', views.showresult),
 # >>>>>>> Stashed changes
+# =======
+#     path('vsjpolls/', include('vsjpolls.urls')),
+# >>>>>>> cf7bde04e9f53d98d047ae4c502bf5fe4e319596
 ]
-
-
-
-
-
-
-
-
-
-
-
