@@ -161,15 +161,72 @@ def loop1(request):
 
 def printtable(request):
     n = 0
+    table = ""
     if request.GET:
         n = int(request.GET["n"])
         table=[ x*n for x in range(1,11)]
 
     return render(request, "printtable.html", {"n": n, "table": table, "x":range(1,11)})
+d={}
+def keyvalue(request):
+    key = ""
+    value = ""
+    if request.GET:
+        key = str(request.GET["key"])
+        value = str(request.GET["value"])
+        # d.add(key, value)
+        d[key] = value
+    return render(request, "keyvalue.html", {"key":key,"d":d,"value":value})
+
+dict={}
+def keyvaluedelete(request):
+    key = ""
+    value = ""
+    #d = {}
+    opt = ""
+    if request.GET:
+        key = str(request.GET["key"])
+        value = str(request.GET["value"])
+        opt = request.GET["option"]
+        # d.add(key, value)
+        if opt == "add":
+            dict[key] = value
+        if opt == "delete":
+            dict.pop(key)
+    return render(request, "keyvaluedelete.html", {"key":key,"dict":dict,"value":value})
+
+result={}
+def addshowresult(request):
+    key = ""
+    value = ""
+    #d = {}
+    opt = ""
+    if request.GET:
+        key = str(request.GET["key"])
+        value = str(request.GET["value"])
+        opt = request.GET["option"]
+        # d.add(key, value)
+        if opt == "add":
+            result[key] = value
+        if opt == "delete":
+            result.pop(key)
+    return render(request, "addresult.html", {"key":key,"result":result,"value":value})
+
+def showresult(request):
+    key = ""
+    new = {}
+
+    if request.GET:
+        key = str(request.GET["key"])
 
 
-
-
+        # d.add(key, value)
+        for k in result.keys():
+            if key == k:
+                new = result[key]
+            else:
+                pass
+    return render(request, "showresult.html", {"new":new,"result":result})
 
 
 
