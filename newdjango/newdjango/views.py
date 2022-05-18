@@ -42,7 +42,9 @@ def get(request):
         result = a + b
     return render(request, "getform1.html", {"a": a, "b": b, "result": result})
 
-
+def selecttag(request):
+    data=["One","Two","Three"]
+    return render(request,"select.html",{"data":data})
 def post(request):
     a = 0
     b = 0
