@@ -44,6 +44,6 @@ urlpatterns = [
     path('showresult/', views.showresult),
 # >>>>>>> Stashed changes
 # =======
-#     path('vsjpolls/', include('vsjpolls.urls')),
+     path('vsjpolls/', include('vsjpolls.urls')),
 # >>>>>>> cf7bde04e9f53d98d047ae4c502bf5fe4e319596
 ]
