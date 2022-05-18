@@ -45,6 +45,8 @@ def get(request):
 def selecttag(request):
     data=["One","Two","Three"]
     return render(request,"select.html",{"data":data})
+def images(request):
+    return render(request,"images.html")
 def post(request):
     a = 0
     b = 0

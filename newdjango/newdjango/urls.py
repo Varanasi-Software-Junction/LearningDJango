@@ -46,5 +46,6 @@ urlpatterns = [
     # =======
     path('vsjpolls/', include('vsjpolls.urls')),
     # >>>>>>> cf7bde04e9f53d98d047ae4c502bf5fe4e319596
-    path("selecttag",views.selecttag)
+    path("selecttag",views.selecttag),
+path("images",views.images),
 ]
