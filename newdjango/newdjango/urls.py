@@ -45,7 +45,9 @@ urlpatterns = [
     # >>>>>>> Stashed changes
     # =======
     path('vsjpolls/', include('vsjpolls.urls')),
+path('books/', include('booksapp.urls')),
     # >>>>>>> cf7bde04e9f53d98d047ae4c502bf5fe4e319596
-    path("selecttag",views.selecttag),
-path("images",views.images),
+    path("selecttag", views.selecttag),
+    path("images", views.images),
+    path("book", views.book),
 ]
