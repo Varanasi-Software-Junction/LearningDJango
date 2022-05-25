@@ -1,3 +1,4 @@
+from django.db.models import Avg
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -17,3 +18,6 @@ def searchbooks(request):
 def searchor(request):
     data = BooksModel.objects.filter(subject="2") | BooksModel.objects.filter(subject="1")
     return render(request, "allbooks.html", {'books': data,"title":"Search Subject Or"})
+def avg(request):
+    data = (BooksModel.objects.filter(subject="2") | BooksModel.objects.filter(subject="1")).aggregate(Avg('price'))
+    return render(request, "allbooks.html", {'books': data,"title":"Avg Price"})

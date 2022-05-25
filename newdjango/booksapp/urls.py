@@ -7,4 +7,5 @@ urlpatterns = [
     path('allbooks', views.allbooks, name='all'),
 path('search', views.searchbooks, name='search'),
 path('or', views.searchor, name='searchor'),
+path('avg', views.avg, name='avg'),
 ]
