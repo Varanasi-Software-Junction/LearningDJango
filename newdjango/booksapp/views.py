@@ -1,4 +1,5 @@
 from django.db.models import Avg
+from django.db.models.functions import Coalesce, Lower
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -10,7 +11,10 @@ def index(request):
 
 
 def allbooks(request):
-    data = BooksModel.objects.all()
+    data = BooksModel.objects.all().order_by('bookname')
+    #data = BooksModel.objects.all().order_by('bookname').reverse()
+    #data = BooksModel.objects.all().order_by(Coalesce('bookname','bookname').desc())
+    #data = BooksModel.objects.all().order_by(Lower('bookname').desc())
     return render(request, "allbooks.html", {'books': data,"title":"All Books"})
 def searchbooks(request):
     data = BooksModel.objects.filter(subject="2")
