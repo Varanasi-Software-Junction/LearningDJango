@@ -29,7 +29,6 @@ urlpatterns = [
     path('html/', views.html),
     path('get/', views.get),
     path('post/', views.post),
-    # <<<<<<< HEAD
     path('addsub/', views.addsub),
     path('addsubpost/', views.addsubpost),
     path('addsubradio/', views.addsubradio),
@@ -42,11 +41,8 @@ urlpatterns = [
     path('keyvaluedelete/', views.keyvaluedelete),
     path('addshowresult/', views.addshowresult),
     path('showresult/', views.showresult),
-    # >>>>>>> Stashed changes
-    # =======
     path('vsjpolls/', include('vsjpolls.urls')),
-path('books/', include('booksapp.urls')),
-    # >>>>>>> cf7bde04e9f53d98d047ae4c502bf5fe4e319596
+    path('books/', include('booksapp.urls')),
     path("selecttag", views.selecttag),
     path("images", views.images),
     path("book", views.book),

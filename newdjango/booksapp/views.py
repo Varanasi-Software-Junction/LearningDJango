@@ -3,11 +3,19 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .forms import TestBookForm, TestBookFormOne
-from .models import BooksModel,TestBook
+from .models import BooksModel, TestBook
 
 
 def index(request):
     return HttpResponse("You're at the Books index.")
+
+
+def between(request):
+    # data = BooksModel.objects.all().order_by('bookname')
+    data = BooksModel.objects.filter(price__lt =300) & BooksModel.objects.filter(price__gt =100)  .order_by('bookname').reverse()
+    # data = BooksModel.objects.all().order_by(Coalesce('bookname','bookname').desc())
+    # data = BooksModel.objects.all().order_by(Lower('bookname').desc())
+    return render(request, "allbooks.html", {'books': data, "title": "All Books"})
 
 
 def allbooks(request):
@@ -40,7 +48,7 @@ def showForm(request):
 def showFormInitial(request):
     book = TestBook.objects.get(pk=1)
     print(book.bookname)
-    f = TestBookFormOne(initial={"bookname":book.bookname,"subject":book.subject,"price":book.price})
+    f = TestBookFormOne(request.POST, initial={"bookname": book.bookname, "subject": book.subject, "price": book.price})
     # print(f)
     # f.save()
     # print(f.is_bound)
@@ -53,12 +61,13 @@ def showFormInitial(request):
 
 def showForm1(request):
     book = TestBook.objects.get(pk=1)
-    f = TestBookFormOne(instance=book)
+    f = TestBookFormOne(request.POST, instance=book)
     # print(f)
     # f.save()
     # print(f.is_bound)
 
     print(f.is_valid())
+    # f.save()
     if f.is_valid():
         f.save()
     return render(request, "testformbook.html", {'testform': f, "title": "Form with Instance"})

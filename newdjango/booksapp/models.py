@@ -15,7 +15,7 @@ class BooksModel(models.Model):
     cover = models.ImageField(upload_to="static/")
 
     def __str__(self):
-        return self.bookname
+        return "Book Name={0}, Subject={1}, Price={2} ".format( self.bookname,self.subject,self.price)
 
 
 class SimpleBook(models.Model):
