@@ -2,6 +2,12 @@
 
  We will develop a complete DJango site in small steps
  Please follow
+ ![image](https://user-images.githubusercontent.com/68769644/171332272-504423c2-f0c8-4996-b583-520a96ea7b36.png)
+
+ ![image](https://user-images.githubusercontent.com/68769644/171332307-6aedd50c-72ad-483c-aa23-ebbbbfda80d5.png)
+
+ 
+ 
  ![image](https://user-images.githubusercontent.com/68769644/170215563-4bec0088-a188-46fd-baed-3bd12a77b103.png)
 
  ![image](https://user-images.githubusercontent.com/68769644/170215358-19f5f97e-58b6-419f-8d77-5e5933d23671.png)
