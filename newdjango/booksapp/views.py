@@ -1,4 +1,4 @@
-from django.db.models import Avg
+from django.db.models import Avg,Max,Min,Sum,Count
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -15,8 +15,7 @@ def between(request):
     data = BooksModel.objects.filter(price__lt =300) & BooksModel.objects.filter(price__gt =100)  .order_by('bookname').reverse()
     # data = BooksModel.objects.all().order_by(Coalesce('bookname','bookname').desc())
     # data = BooksModel.objects.all().order_by(Lower('bookname').desc())
-    return render(request, "allbooks.html", {'books': data, "title": "All Books"})
-
+    return render(request, "allbooks.html", {'books': data, "title": "Less than and greater than"})
 
 def allbooks(request):
     # data = BooksModel.objects.all().order_by('bookname')
@@ -36,9 +35,10 @@ def searchor(request):
     return render(request, "allbooks.html", {'books': data, "title": "Search Subject Or"})
 
 
-def avg(request):
-    data = (BooksModel.objects.filter(subject="2") | BooksModel.objects.filter(subject="1")).aggregate(Avg('price'))
-    return render(request, "allbooks.html", {'books': data, "title": "Avg Price"})
+def aggregates(request):
+    #data = (BooksModel.objects.filter(subject="2") | BooksModel.objects.filter(subject="1")).aggregate(Avg('price'))
+    data = BooksModel.objects.aggregate(Avg('price'), Max('price'), Min('price'),Sum('price'),Count('price'))
+    return render(request, "allbooks.html", {'books': data, "title": "Aggregatess"})
 
 
 def showForm(request):

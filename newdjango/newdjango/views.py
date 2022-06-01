@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-#from siteclasses import Book
+
+# from siteclasses import Book
 
 
 def index(request):
-    return HttpResponse("Welcome abc  to new DJango")
+    links = ["aggregates", "all", "between"]
+    return render(request, "home.html", {"links": links})
 
 
 def indrakant(request):
@@ -265,8 +267,9 @@ def showresult(request):
 
 from .siteclasses import Book as bb
 
-#def bookadd
+
+# def bookadd
 
 def book(request):
     book = bb.Book("Basic C", "C", 500)
-    return render(request, "book.html",{"book":book})
+    return render(request, "book.html", {"book": book})
