@@ -56,12 +56,16 @@ def showFormInitial(request):
     print(f.is_valid())
     if f.is_valid():
         f.save()
+        return HttpResponse("Saved")
     return render(request, "testformbook.html", {'testform': f, "title": "Form with Initial"})
 
 
 def showForm1(request):
     book = TestBook.objects.get(pk=1)
-    f = TestBookFormOne(request.POST, instance=book)
+    f = TestBookFormOne( instance=book)
+    if request.POST:
+        f = TestBookFormOne(request.POST,instance=book)
+
     # print(f)
     # f.save()
     # print(f.is_bound)

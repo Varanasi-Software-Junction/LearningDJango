@@ -10,6 +10,6 @@ urlpatterns = [
     path('or', views.searchor, name='searchor'),
     path('aggregates', views.aggregates, name='aggregates'),
     path('form', views.showForm, name='form'),
-    path('formone', views.showForm1, name='form1'),
+    path('formone', views.showForm1, name='formdata'),
     path('initial', views.showFormInitial, name='initial'),
 ]
