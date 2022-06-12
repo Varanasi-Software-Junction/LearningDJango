@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf.urls import handler404, handler500
 from . import views
 
 urlpatterns = [
@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.index),
     path('vsjpolls/', include('vsjpolls.urls')),
     path('books/', include('booksapp.urls')),
-    path('test',views.test),
+    path('test', views.test),
 
 ]
+handler404 = views.vsj404

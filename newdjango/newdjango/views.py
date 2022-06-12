@@ -12,3 +12,5 @@ def index(request):
 
 def test(request):
     return render(request, "bootstrap.html")
+def vsj404(request,exception):
+    return render(request, "404.html",{"exception":exception},status=404)
