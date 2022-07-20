@@ -5,6 +5,13 @@ from django.shortcuts import render, HttpResponse
 
 # from siteclasses import Book
 
+def tfquiz(request):
+    qno=0
+    if request.POST:
+        qno=int(request.POST["qno"])
+        qno+=1
+    return render(request,"tfquiz.html",{"qno":qno})
+
 
 def index(request):
     # https://docs.djangoproject.com/en/dev/ref/contrib/admin/#reversing-admin-urls
@@ -31,8 +38,8 @@ def setCookie(request):
     expires = datetime.datetime.strftime(datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
                                          "%a, %d-%b-%Y %H:%M:%S GMT")
 
-    data=HttpResponse("Cookie Set")
-    data.set_cookie("location", 'Varanasi',max_age=max_age,expires=expires)
+    data = HttpResponse("Cookie Set")
+    data.set_cookie("location", 'Varanasi', max_age=max_age, expires=expires)
     return data
 
 

@@ -26,8 +26,9 @@ urlpatterns = [
     path('books/', include('booksapp.urls')),
     path('test', views.test),
     path('session', views.mysession),
-path('setcookie', views.setCookie),
-path('getcookie', views.getCookie),
+    path('setcookie', views.setCookie),
+    path('getcookie', views.getCookie),
+    path('tfquiz', views.tfquiz),
 
 ]
 handler404 = views.vsj404
