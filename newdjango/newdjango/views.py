@@ -6,11 +6,17 @@ from django.shortcuts import render, HttpResponse
 # from siteclasses import Book
 
 def tfquiz(request):
-    qno=0
+    questions = [{"question": "C is a programming language", "answer": True},
+                 {"question": "Java is not a programming language", "answer": False},
+                 {"question": "C is not a programming language", "answer": False}]
+    qno = 0
     if request.POST:
-        qno=int(request.POST["qno"])
-        qno+=1
-    return render(request,"tfquiz.html",{"qno":qno})
+        qno = int(request.POST["qno"])
+        qno += 1
+    if qno>=len(questions):
+        return HttpResponse("Test Over")
+    question = questions[qno]
+    return render(request, "tfquiz.html", {"qno": qno,"qnumber":qno+1, "question": question})
 
 
 def index(request):
