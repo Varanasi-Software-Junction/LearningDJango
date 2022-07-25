@@ -20,7 +20,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('sessionview', views.sessionview),
+    path('sessionset', views.sessionset),
+    path('sessionremove', views.sessionremove),
     path('', views.index),
     path('vsjpolls/', include('vsjpolls.urls')),
     path('books/', include('booksapp.urls')),

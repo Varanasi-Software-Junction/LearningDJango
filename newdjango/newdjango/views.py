@@ -4,6 +4,33 @@ from django.shortcuts import render, HttpResponse
 
 
 # from siteclasses import Book
+def sessionremove(request):
+    key = ""
+    if request.POST:
+        key = request.POST["key"]
+        try:
+            request.session.pop(key)
+        except:
+            pass
+
+    return render(request, "sessionremove.html", {"key": key})
+
+
+def sessionset(request):
+    key = ""
+    value = ""
+    if request.POST:
+        key = request.POST["key"]
+        value = request.POST["value"]
+        request.session[key] = value
+    return render(request, "sessionset.html", {"key": key, "value": value})
+
+
+def sessionview(request):
+    request.session["score"] = 90
+    request.session["scor0e"] = 909
+    return render(request, "sessionview.html", {"session": request.session.items()})
+
 
 def tfquiz(request):
     questions = [{"question": "C is a programming language", "answer": True},
@@ -13,10 +40,10 @@ def tfquiz(request):
     if request.POST:
         qno = int(request.POST["qno"])
         qno += 1
-    if qno>=len(questions):
+    if qno >= len(questions):
         return HttpResponse("Test Over")
     question = questions[qno]
-    return render(request, "tfquiz.html", {"qno": qno,"qnumber":qno+1, "question": question})
+    return render(request, "tfquiz.html", {"qno": qno, "qnumber": qno + 1, "question": question})
 
 
 def index(request):
