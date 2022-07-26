@@ -27,8 +27,6 @@ def sessionset(request):
 
 
 def sessionview(request):
-    request.session["score"] = 90
-    request.session["scor0e"] = 909
     return render(request, "sessionview.html", {"session": request.session.items()})
 
 
