@@ -21,15 +21,18 @@ from django.urls import path, include
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-
+    path('sessionview', views.sessionview),
+    path('sessionset', views.sessionset),
+    path('sessionremove', views.sessionremove),
     path('', views.index),
 <<<<<<< Updated upstream
     path('vsjpolls/', include('vsjpolls.urls')),
     path('books/', include('booksapp.urls')),
     path('test', views.test),
     path('session', views.mysession),
-path('setcookie', views.setCookie),
-path('getcookie', views.getCookie),
+    path('setcookie', views.setCookie),
+    path('getcookie', views.getCookie),
+    path('tfquiz', views.tfquiz),
 
 =======
     path('indrakant/', views.indrakant),

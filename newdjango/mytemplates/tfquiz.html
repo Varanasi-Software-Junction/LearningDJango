@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>True-False Quiz</title>
+</head>
+<body>
+<form method="post">
+    <input type="hidden" value="{{qno}}" name="qno">
+    {% csrf_token %}
+<h1>True False Quiz</h1>
+<h2>{{qnumber}}</h2>
+    <h2>{{question.question}}</h2>
+    <input type="submit" value="True"><input type="submit" value="False">
+    </form>
+</body>
+</html>
