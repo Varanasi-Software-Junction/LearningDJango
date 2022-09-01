@@ -19,6 +19,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
+path('questionsquiz/', views.quizquestions, name='questions'),
     path('admin/', admin.site.urls),
     path('sessionview', views.sessionview),
     path('sessionset', views.sessionset),

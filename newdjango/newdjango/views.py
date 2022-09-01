@@ -1,6 +1,18 @@
 import datetime
+import json
 
 from django.shortcuts import render, HttpResponse
+
+
+def quizquestions(request):
+    pythonquestions = {"q": "Python"}
+    javaquestions = {"q": "Java"}
+    demand = request.GET["q"]
+    if demand == "python":
+        return HttpResponse(json.dumps(pythonquestions))
+    if demand == "java":
+        return HttpResponse(json.dumps(javaquestions))
+    return HttpResponse("No Question Asked")
 
 
 # from siteclasses import Book
