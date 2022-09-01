@@ -1,0 +1,12 @@
+Collecting mysqlclient
+  Using cached mysqlclient-2.1.0.tar.gz (87 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Building wheels for collected packages: mysqlclient
+  Building wheel for mysqlclient (setup.py): started
+  Building wheel for mysqlclient (setup.py): finished with status 'error'
+  Running setup.py clean for mysqlclient
+
+Installing collected packages: mysqlclient
+  Running setup.py install for mysqlclient: started
+  Running setup.py install for mysqlclient: finished with status 'error'

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Name using Select Tag</title>
+    {% load static %}
+    <link href="{% static 'styles.css'%}" rel="stylesheet">
+</head>
+<body>
+<h1>Select Tag using POST method</h1>
+<h2>{{option}} is {{result}}</h2>
+<img src="{% static '{{result}}.jpg'%}" alt="not found">
+
+<form method = "post">
+    {% csrf_token %}
+<!--     select state name <input type = "number" name = "a" value = "{{a}}">-->
+<!--     B <input type = "number" name = "b" value = "{{b}}">-->
+
+    <label for = "option">Choose an Option</label>
+    <select name = "option" id = "option">
+        <option value = "up"> Uttar Pradesh</option>
+        <option value = "mp">Madhya Pradesh</option>
+        <option value = "uk">Uttarakhand</option>
+        <option value = "hp">Himanchal Pradesh</option>
+    </select>
+    <input type = "submit" name = "submit" value = "submit">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+
+<form method = "get">
+<select>
+    {% for books in book %}
+    <option value = "{{book.bookname}}">{{books.bookname}}</option>
+
+    {% endfor %}
+</select>
+    <input type="submit" value="result">
+
+
+<table border = "2">
+    {% for books in book %}
+    <tr><td>{{books.bookname}}</td>
+    <td>{{books.subject}}</td>
+    <td>{{books.price}}</td></tr>
+    {% endfor %}
+    {{sub}}
+</table>
+</form>
+</body>
+</html>
