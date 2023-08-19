@@ -22,5 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.index),
+    path('sessionset/', views.sessionset),
+    path('sessionview/', views.sessionview),
+    path('sessionremove/', views.sessionremove),
 
 ]
