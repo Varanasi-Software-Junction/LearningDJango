@@ -33,9 +33,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'booksapp.apps.BooksappConfig',
-    'vsjpolls.apps.VsjpollsConfig',
-'myownapp.apps.MyownappConfig',
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
